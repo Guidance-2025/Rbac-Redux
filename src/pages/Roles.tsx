@@ -30,9 +30,6 @@ const SCOPE_GROUPS = {
   }
 };
 
-// Flatten scopes for validation and data handling
-const ALL_SCOPES = Object.values(SCOPE_GROUPS).flatMap(group => group.scopes);
-
 const Roles = () => {
   const dispatch = useAppDispatch();
   const { roles, isLoading, error } = useAppSelector((state) => state.roles);
@@ -289,7 +286,14 @@ const Roles = () => {
   
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Role Management</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold text-gray-900">Role Management</h1>
+        {!isEditing && (
+          <Button onClick={handleCreateNew} variant="primary">
+            Create New Role
+          </Button>
+        )}
+      </div>
       
       {error && <Alert type="error" message={error} />}
       {formError && <Alert type="error" message={formError} />}

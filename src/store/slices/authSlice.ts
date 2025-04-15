@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { AuthState, LoginCredentials, RegisterData, User } from '../../types';
-import axios from 'axios';
+import { User } from '../../types';
 import authService from '../../services/authService';
 import { RootState } from '../index';
 

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../store/slices/authSlice';
 import Alert from '../components/Alert';
-import { AppDispatch } from '../store/store';
+import { AppDispatch } from '../store';
 
 const Register: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -12,6 +12,7 @@ const Register: React.FC = () => {
     name: '',
     email: '',
     password: '',
+    confirmPassword: '',
     gender: '',
     age: ''
   });
